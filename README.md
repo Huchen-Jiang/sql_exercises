@@ -5,4 +5,4 @@ exercise_01
 source: [https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store](https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store)
 
 exercise_02
-source: [](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management)
+source: [https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management)
