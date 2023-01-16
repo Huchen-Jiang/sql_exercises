@@ -35,3 +35,13 @@ ON e.Department = d.Code
 GROUP BY d.Code;
 
 -- 10. Select all the data of employees, including each employee's department's data.
+SELECT * FROM employees e
+LEFT JOIN departments d
+ON e.Department = d.Code;
+
+-- 11. Select the name and last name of each employee, along with the name and budget of the employee's department.
+SELECT e.Name, e.LastName, d.Name AS department_name, d.Budget FROM employees e
+LEFT JOIN departments d
+ON e.Department = d.Code;
+
+-- 12. Select the name and last name of employees working for departments with a budget greater than $60,000.
