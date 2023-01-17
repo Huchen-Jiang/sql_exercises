@@ -45,3 +45,13 @@ LEFT JOIN departments d
 ON e.Department = d.Code;
 
 -- 12. Select the name and last name of employees working for departments with a budget greater than $60,000.
+SELECT e.Name, e.LastName FROM employees e
+LEFT JOIN departments d
+ON e.Department = d.Code
+WHERE d.Budget > 60000;
+
+-- 13. Select the departments with a budget larger than the average budget of all the departments.
+SELECT * FROM departments
+WHERE Budget > (SELECT AVG(Budget) FROM departments);
+
+-- 14. Select the names of departments with more than two employees.
