@@ -6,3 +6,6 @@ source: [https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store](https:/
 
 exercise_02
 source: [https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management](https://en.wikibooks.org/wiki/SQL_Exercises/Employee_management)
+
+exercise_03
+source: [https://en.wikibooks.org/wiki/SQL_Exercises/The_warehouse](https://en.wikibooks.org/wiki/SQL_Exercises/The_warehouse)
