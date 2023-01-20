@@ -54,3 +54,35 @@ INSERT INTO warehouses(Code,Location,Capacity)
 VALUE(6, "New York", 3);
 
 -- 12. Create a new box, with code "H5RT", containing "Papers" with a value of $200, and located in warehouse 2.
+INSERT INTO boxes(Code,Contents,Value,Warehouse)
+VALUE("H5RT", "Papers", 200, 2);
+
+-- 13. Reduce the value of all boxes by 15%.
+-- SET SQL_SAFE_UPDATES = 0;
+UPDATE boxes
+SET Value = Value * 0.85;
+
+-- 14. Apply a 20% value reduction to boxes with a value larger than the average value of all the boxes.
+UPDATE boxes
+SET Value = Value * 0.8
+WHERE Value > (
+	SELECT temp.average_value FROM (
+	SELECT AVG(Value) AS average_value FROM boxes
+    ) temp
+);
+
+-- 15. Remove all boxes with a value lower than $100.
+DELETE FROM boxes
+WHERE Value < 100;
+
+-- 16. Remove all boxes from saturated warehouses.
+DELETE FROM boxes
+WHERE Warehouse IN(
+SELECT temp.Code FROM (
+		SELECT w.Code FROM warehouses w
+		LEFT JOIN boxes b
+		ON b.Warehouse = w.Code
+		GROUP BY w.Code, w.Capacity
+		HAVING COUNT(b.Code) > w.Capacity
+	) temp
+);
